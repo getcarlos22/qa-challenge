@@ -40,16 +40,16 @@ We can also configure environment-specific properties and options, so that the t
 ```json
 environments {
   default {
-    webdriver.base.url = "https://duckduckgo.com"
+    webdriver.base.url = "https://jsonplaceholder.typicode.com"
   }
   dev {
-    webdriver.base.url = "https://duckduckgo.com/dev"
+    webdriver.base.url = "https://jsonplaceholder.typicode.com/dev"
   }
   staging {
-    webdriver.base.url = "https://duckduckgo.com/staging"
+    webdriver.base.url = "https://jsonplaceholder.typicode.com/staging"
   }
   prod {
-    webdriver.base.url = "https://duckduckgo.com/prod"
+    webdriver.base.url = "https://jsonplaceholder.typicode.com/prod"
   }
 }
 ```
