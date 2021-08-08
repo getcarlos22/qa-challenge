@@ -25,6 +25,8 @@ Or
 $ gradle clean test -Pdriver=firefox
 ```
 
+## Executing with Tags
+
 ## Serenity Reports
 The test results will be recorded in the `target/site/serenity/index` directory.
 
