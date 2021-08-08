@@ -24,8 +24,11 @@ Or
 ```json
 $ gradle clean test -Pdriver=firefox
 ```
+Tags are available as well 
+```json
+$ mvn clean verify -Ddriver=firefox "-Dcucumber.options=--tags @Id=1.1"
+```
 
-## Executing with Tags
 
 ## Serenity Reports
 The test results will be recorded in the `target/site/serenity/index` directory.
