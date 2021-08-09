@@ -13,7 +13,7 @@ jobs:
 
       - restore_cache:
 
-          key: restassured-serenitybdd-junit-cucumber-{{ checksum "pom.xml" }}
+          key: qa-challenge-mobiquity-{{ checksum "pom.xml" }}
 
       - run: mvn dependency:go-offline # gets the project dependencies
 
