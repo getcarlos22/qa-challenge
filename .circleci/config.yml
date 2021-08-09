@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
 
-    working_directory: ~/restassured-serenitybdd-junit-cucumber
+    working_directory: ~/qa-challenge-mobiquity
 
     docker:
       - image: circleci/openjdk:8-jdk-stretch
@@ -20,7 +20,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.m2
-          key: restassured-serenitybdd-junit-cucumber-{{ checksum "pom.xml" }}
+          key: qa-challenge-mobiquity-{{ checksum "pom.xml" }}
 
       - run: mvn clean verify
 
