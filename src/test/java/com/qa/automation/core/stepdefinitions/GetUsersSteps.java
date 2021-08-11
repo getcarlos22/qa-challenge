@@ -22,7 +22,7 @@ public class GetUsersSteps {
     @Steps
     BlogUserQuestions blogUserQuestions;
 
-    @When("I call the get user details endpoint for user \"(.*)\"")
+    @When("I call the get user details endpoint for user {}")
     public void i_call_the_get_user_endpoint_for_user(String user) {
         blogUserActions.getUserDetails(user);
     }
@@ -37,7 +37,7 @@ public class GetUsersSteps {
         tasksQuestions.responseCodeIs(200, lastResponse());
     }
 
-    @And("username should be \"(.*)\"")
+    @And("username should be {}")
     public void usernameShouldBe(String userName) {
         blogUserQuestions.validateUserName(userName, lastResponse());
     }

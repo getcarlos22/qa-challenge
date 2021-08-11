@@ -43,7 +43,7 @@ public class GetCommentsSteps {
     @Steps
     tasksQuestions tasksQuestions;
 
-    @Given("a blog post by user \"(.*)\"")
+    @Given("a blog post by user {}")
     public void a_blog_post_by_user(String user) {
         blogUserActions.getUserDetails(user);
         tasksQuestions.responseCodeIs(200, lastResponse());
