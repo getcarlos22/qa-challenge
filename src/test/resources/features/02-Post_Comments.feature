@@ -1,3 +1,4 @@
+@postComments
 Feature: Get post comments
   As an admin
   I should be able to fetch comments of individual posts

@@ -1,3 +1,4 @@
+@blogUser
 Feature: Get user details
   As an admin user
   I should be able to get details of individual blog users

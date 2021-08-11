@@ -1,8 +1,9 @@
+@userPosts
 Feature: Get user blog posts
   As an admin
   I should be able to retrieve post created by users
 
-  @Id=3.1 @SmokeTest
+  @Id=3.1
   Scenario Outline: "Get user posts" response schema should match with specification
     Given <user> has few post to her name in the blog
     When I call the endpoint to get posts by the user
