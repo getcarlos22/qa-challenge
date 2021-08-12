@@ -13,6 +13,11 @@ Sample Rest API test solution for https://jsonplaceholder.typicode.com/ endpoint
 - This solution is designed in an Action-Question pattern with the code base categorized into domain model packages based on user actions and questions to understand/validate results. 
 - The API spec for schema comparison is placed inside "schema" folder in test resources. The specs are generated from https://www.liquid-technologies.com/online-json-to-schema-converter.
 
+## Prerequisites
+- JDK 1.8.0 (recommended)
+- Maven 3.6.3
+- IDE (preferably IntelliJ Idea community version)
+
 ## Executing the tests
 To run the sample project, you can either just run the `CucumberTestSuite` test runner class, or run either `mvn verify` or `gradle test` from the command line.
 
