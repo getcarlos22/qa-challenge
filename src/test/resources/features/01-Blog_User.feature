@@ -11,7 +11,7 @@ Feature: Get user details
     Examples:
       | user     |
       | Delphine |
-     # | Micheal  |
+      | Samantha |
 
   @Id=1.2 @Regression
   Scenario Outline: Should be able to get user details
@@ -21,7 +21,7 @@ Feature: Get user details
     Examples:
       | user     |
       | Delphine |
-      #| Micheal  |
+      | Samantha |
 
   @Id=1.3
   Scenario: Empty response should be returned while searching for a non-existent user

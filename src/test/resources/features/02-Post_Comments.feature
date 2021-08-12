@@ -11,7 +11,7 @@ Feature: Get post comments
     Examples:
       | user     |
       | Delphine |
-     # | Micheal  |
+      | Samantha |
 
   @Id=2.2
   Scenario Outline: Should be able to get comments for a post
@@ -21,7 +21,7 @@ Feature: Get post comments
     Examples:
       | user     |
       | Delphine |
-     # | Micheal  |
+      | Samantha |
 
   @Id=2.3
   Scenario Outline: Emails in the comments should be in proper format
@@ -31,7 +31,7 @@ Feature: Get post comments
     Examples:
       | user     |
       | Delphine |
-     # | Micheal  |
+      | Samantha |
 
   @Id=2.4 @SmokeTest
   Scenario: Empty response should be returned when searching for comments with non-existent postId

@@ -11,7 +11,7 @@ Feature: Get user blog posts
     Examples:
       | user     |
       | Delphine |
-     # | Micheal  |
+      | Samantha |
 
   @Id=3.2
   Scenario Outline: Should be able to retrieve user posts
@@ -21,7 +21,7 @@ Feature: Get user blog posts
     Examples:
       | user     |
       | Delphine |
-     # | Micheal  |
+      | Samantha |
 
   @Id=3.3
   Scenario: Empty response should be returned while searching with invalid userid

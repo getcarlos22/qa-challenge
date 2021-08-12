@@ -27,7 +27,7 @@ public class GetPostSteps {
     @Steps
     tasksQuestions tasksQuestions;
 
-    @Given("\"(.*)\" has few post to (?:.*) name in the blog")
+    @Given("([^\"]*) has few post to (?:.*) name in the blog")
     public void user_has_few_posts_in_the_blog(String user) {
         blogUserActions.getUserDetails(user);
         tasksQuestions.responseCodeIs(200, lastResponse());
