@@ -9,9 +9,13 @@ Feature: Get user blog posts
     When I call the endpoint to get posts by the user
     Then the schema should match with the specification defined in "user_posts.json"
     Examples:
-      | user     |
-      | Delphine |
-      | Samantha |
+      | user      |
+      | Delphine  |
+      | Antonette |
+      | Karianne  |
+      | Kamren    |
+      | Bret      |
+      | Samantha  |
 
   @Id=3.2
   Scenario Outline: Should be able to retrieve user posts
@@ -19,9 +23,13 @@ Feature: Get user blog posts
     When I call the endpoint to get posts by the user
     Then all posts by the user should be returned
     Examples:
-      | user     |
-      | Delphine |
-      | Samantha |
+      | user      |
+      | Delphine  |
+      | Antonette |
+      | Karianne  |
+      | Kamren    |
+      | Bret      |
+      | Samantha  |
 
   @Id=3.3
   Scenario: Empty response should be returned while searching with invalid userid

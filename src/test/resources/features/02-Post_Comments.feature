@@ -9,9 +9,13 @@ Feature: Get post comments
     When I call the endpoint to get comments for a post
     And the schema should match with the specification defined in "post_comments.json"
     Examples:
-      | user     |
-      | Delphine |
-      | Samantha |
+      | user      |
+      | Delphine  |
+      | Antonette |
+      | Karianne  |
+      | Kamren    |
+      | Bret      |
+      | Samantha  |
 
   @Id=2.2
   Scenario Outline: Should be able to get comments for a post
@@ -19,9 +23,13 @@ Feature: Get post comments
     When I call the endpoint to get comments for a post
     Then all comments for the post should be returned
     Examples:
-      | user     |
-      | Delphine |
-      | Samantha |
+      | user      |
+      | Delphine  |
+      | Antonette |
+      | Karianne  |
+      | Kamren    |
+      | Bret      |
+      | Samantha  |
 
   @Id=2.3
   Scenario Outline: Emails in the comments should be in proper format
@@ -29,9 +37,13 @@ Feature: Get post comments
     When I retrieve comments for each post
     Then each comment should have an associated valid mailId
     Examples:
-      | user     |
-      | Delphine |
-      | Samantha |
+      | user      |
+      | Delphine  |
+      | Antonette |
+      | Karianne  |
+      | Kamren    |
+      | Bret      |
+      | Samantha  |
 
   @Id=2.4 @SmokeTest
   Scenario: Empty response should be returned when searching for comments with non-existent postId

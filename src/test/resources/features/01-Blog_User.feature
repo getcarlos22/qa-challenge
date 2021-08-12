@@ -9,9 +9,13 @@ Feature: Get user details
     Then user details should be retrieved
     And the schema should match with the specification defined in "user_details.json"
     Examples:
-      | user     |
-      | Delphine |
-      | Samantha |
+      | user      |
+      | Delphine  |
+      | Antonette |
+      | Karianne  |
+      | Kamren    |
+      | Bret      |
+      | Samantha  |
 
   @Id=1.2 @Regression
   Scenario Outline: Should be able to get user details
@@ -19,9 +23,13 @@ Feature: Get user details
     Then user details should be retrieved
     And username should be <user>
     Examples:
-      | user     |
-      | Delphine |
-      | Samantha |
+      | user      |
+      | Delphine  |
+      | Antonette |
+      | Karianne  |
+      | Kamren    |
+      | Bret      |
+      | Samantha  |
 
   @Id=1.3
   Scenario: Empty response should be returned while searching for a non-existent user
