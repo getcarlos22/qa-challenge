@@ -1,10 +1,12 @@
 <configuration>
+
+    <property name="LOGS" value="./logs"/>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
+        <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>
-                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n
             </pattern>
-        </encoder>
+        </layout>
     </appender>
 
     <logger name="root" level="DEBUG"/>
@@ -14,5 +16,34 @@
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
     </root>
+
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${LOGS}.%d{yyyy-MM-dd}.log</fileNamePattern>
+
+            <!-- keep 30 days' worth of history capped at 3GB total size -->
+            <maxFileSize>5MB</maxFileSize>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+    </root>
+    <logger name="com.core" level="trace" addictivity="false">
+        <appender-ref ref="RfAppender"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
 
 </configuration>
