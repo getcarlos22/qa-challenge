@@ -17,10 +17,13 @@ import java.util.List;
 import java.util.Map;
 import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Steps;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class GetCommentsSteps {
+
+    private Logger logger = LoggerFactory.getLogger(GetCommentsSteps.class);
 
     @Steps
     BlogUserActions blogUserActions;
@@ -53,23 +56,28 @@ public class GetCommentsSteps {
         blogPostActions.getUserPost(userId);
         String postId = blogPostQuestions.getPostId(lastResponse());
         Serenity.setSessionVariable("postId").to(postId);
+        //logger.info("UserID: {}, Tags: {}",blogUserQuestions.getUserId(lastResponse()));
+        logger.info("UserID: {}",blogUserQuestions.getUserId(lastResponse()));
     }
 
     @When("I call the endpoint to get comments for a post")
     public void i_call_the_endpoint_to_get_comments_for_a_post() {
         Actions.getPostComments(Serenity.sessionVariableCalled("postId"));
         tasksQuestions.responseCodeIs(200, lastResponse());
+        logger.info("searching for user comments");
     }
 
     @Then("all comments for the post should be returned")
     public void all_comments_for_the_post_should_be_returned() {
         int commentCount = Questions.getCommentCount(lastResponse());
         Questions.verifyNumberOfComments(commentCount, 5);
+        logger.info("user comments found");
     }
 
     @When("I call the endpoint to get comments for a non-existent post")
     public void i_call_the_endpoint_to_get_comments_for_a_non_existent_post() {
         Actions.getPostComments("999999");
+        logger.info("trying for non-existent user posts");
     }
 
     @When("I retrieve comments for each post")
@@ -84,12 +92,14 @@ public class GetCommentsSteps {
             mailIds.addAll(mailId);
         }
         Serenity.setSessionVariable("mailIds").to(mailIds);
+        logger.info("comments for each post");
     }
 
     @Then("each comment should have an associated valid mailId")
     public void each_comment_should_have_an_associated_valid_mailId() {
         List<String> mailIds = Serenity.sessionVariableCalled("mailIds");
         Questions.verifyMailIdInComments(mailIds);
+        logger.info("valid email for comment");
     }
 
 
